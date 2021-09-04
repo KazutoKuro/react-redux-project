@@ -1,4 +1,4 @@
-<!-- vid-3 & 4 - React Setup (With CDN) React components -->
+<!-- vid-3 & 4 - React Setup (With CDN) React components & 5: state -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,11 +17,16 @@
 
     <script type="text/babel">
         class App extends React.Component{
+            state = {
+                name: 'Ryu', 
+                age: 30
+            }
             render(){
                 return (
                     <div className="app-content"> 
                         <h1> Hey, ninjas</h1>
-                        <p> { Math.random() * 10 } </p>
+                        <p> Hey, ninjas </p>
+                        <p> My name is: { this.state.name } and I am { this.state.age } </p>
                     </div>
                 )
             }
