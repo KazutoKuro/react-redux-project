@@ -21,14 +21,18 @@
                 name: 'Ryu', 
                 age: 30
             }
-            handleClick(e) {
+            handleClick = (e) => {
             //     console.log(e.target);
-            console.log(this.state.age);
+            this.setState({
+                name: 'Yoshi',
+                age: '25'
+            });
+            console.log(this.state);
             }
-            handleMouseOver(e){
+            handleMouseOver = (e) => {
                 console.log(e.target, e.pageX);
             }
-            handleCopy(e){
+            handleCopy = (e) =>{
                 console.log('Try being original for once!');
             }
             render(){
