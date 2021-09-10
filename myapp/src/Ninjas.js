@@ -51,21 +51,68 @@
 
 // vid-15: Stateless Components
 
+// import React, { Component } from 'react';
+
+// const Ninjas = ({ninjas}) => {
+//     const ninjaList = ninjas.map(ninja => {
+//         return (
+//             <div className="ninja" key={ninja.id}>
+//                 <div>Name: {ninja.name}</div>
+//                 <div>Age: {ninja.age}</div>
+//                 <div>Belt: {ninja.belt}</div>
+//             </div>
+//         )   
+//     })
+//     return(
+//         <div className="ninja-list">
+//             { ninjaList }
+//         </div>
+//     )
+// }
+
+// export default Ninjas;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+// vid-16: Conditional Output
+
 import React, { Component } from 'react';
 
 const Ninjas = ({ninjas}) => {
-    const ninjaList = ninjas.map(ninja => {
-        return (
-            <div className="ninja" key={ninja.id}>
-                <div>Name: {ninja.name}</div>
-                <div>Age: {ninja.age}</div>
-                <div>Belt: {ninja.belt}</div>
-            </div>
-        )   
-    })
+    // const ninjaList = ninjas.map(ninja => {
+    //     if(ninjas.age > 20){
+    //         return (
+    //             <div className="ninja" key={ninja.id}>
+    //                 <div>Name: {ninja.name}</div>
+    //                 <div>Age: {ninja.age}</div>
+    //                 <div>Belt: {ninja.belt}</div>
+    //             </div>
+    //         )   
+    //     } else {
+    //         return null
+    //     }
+    // })
+   
+    // return(
+    //     <div className="ninja-list">
+    //         { ninjaList }
+    //     </div>
+    // )
+    
     return(
         <div className="ninja-list">
-            { ninjaList }
+            { 
+                ninjas.map(ninja => {
+                    // condition ? () : () // true : false
+                    return ninja.age ? (
+                        <div className="ninja" key={ninja.id}>
+                            <div>Name: {ninja.name}</div>
+                            <div>Age: {ninja.age}</div>
+                            <div>Belt: {ninja.belt}</div>
+                        </div>
+                    ) : null;
+                })
+            }
         </div>
     )
 }
